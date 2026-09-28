@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 640" width="1400" height="640" role="img" aria-label="Arquitetura do projeto Rede do Zero">
+  <style>
+    text{font-family:'Segoe UI',Helvetica,Arial,sans-serif}
+    .h1{font-size:28px;font-weight:700;fill:#0f172a}
+    .sub{font-size:15px;fill:#64748b}
+    .bt{font-size:17px;font-weight:700;fill:#0f172a}
+    .bs{font-size:13px;fill:#475569}
+    .ct{font-size:17px;font-weight:700;fill:#0f172a}
+    .cl{font-size:13px;fill:#475569}
+    .cf{font-size:11px;fill:#1d4ed8}
+    .sec{font-size:12px;font-weight:700;fill:#94a3b8;letter-spacing:1.5px}
+    .num{font-size:13px;font-weight:700;fill:#ffffff}
+    .foot{font-size:14px;fill:#3730a3}
+  </style>
+  <defs>
+    <marker id="a" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto-start-reverse">
+      <path d="M0,0 L8,3 L0,6 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="640" fill="#f8fafc"/>
+
+  <text x="700" y="48" class="h1" text-anchor="middle">Rede do Zero</text>
+  <text x="700" y="76" class="sub" text-anchor="middle">Comunicacao de rede com a biblioteca socket, sem nenhum framework</text>
+
+  <text x="40" y="122" class="sec">O CAMINHO DE UM DADO</text>
+
+  <rect x="40" y="146" width="280" height="104" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="180" y="186" class="bt" text-anchor="middle">Cliente</text>
+  <text x="180" y="212" class="bs" text-anchor="middle">navegador, app ou script</text>
+  <text x="180" y="234" class="cf" text-anchor="middle">chama connect()</text>
+
+  <rect x="386" y="146" width="280" height="104" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="526" y="186" class="bt" text-anchor="middle">socket do Python</text>
+  <text x="526" y="212" class="bs" text-anchor="middle">caminho do SO ate a rede</text>
+  <text x="526" y="234" class="cf" text-anchor="middle">socket().bind().send()</text>
+
+  <rect x="732" y="146" width="280" height="104" rx="12" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <text x="872" y="186" class="bt" text-anchor="middle">TCP / IP</text>
+  <text x="872" y="212" class="bs" text-anchor="middle">transporte e endereco</text>
+  <text x="872" y="234" class="cf" text-anchor="middle">handshake e pacotes</text>
+
+  <rect x="1078" y="146" width="280" height="104" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="1218" y="186" class="bt" text-anchor="middle">Servidor</text>
+  <text x="1218" y="212" class="bs" text-anchor="middle">escuta e responde</text>
+  <text x="1218" y="234" class="cf" text-anchor="middle">chama accept()</text>
+
+  <line x1="330" y1="198" x2="376" y2="198" stroke="#94a3b8" stroke-width="2" marker-start="url(#a)" marker-end="url(#a)"/>
+  <line x1="676" y1="198" x2="722" y2="198" stroke="#94a3b8" stroke-width="2" marker-start="url(#a)" marker-end="url(#a)"/>
+  <line x1="1022" y1="198" x2="1068" y2="198" stroke="#94a3b8" stroke-width="2" marker-start="url(#a)" marker-end="url(#a)"/>
+
+  <text x="40" y="304" class="sec">AS 4 ETAPAS</text>
+
+  <rect x="40" y="326" width="280" height="212" rx="12" fill="#ffffff" stroke="#dbeafe" stroke-width="1.5"/>
+  <circle cx="70" cy="358" r="16" fill="#2563eb"/>
+  <text x="70" y="363" class="num" text-anchor="middle">1</text>
+  <text x="98" y="364" class="ct">TCP</text>
+  <text x="62" y="402" class="cl">Chat com conexao</text>
+  <text x="62" y="426" class="cl">bind + listen + accept</text>
+  <text x="62" y="450" class="cl">Uma thread por cliente</text>
+  <text x="62" y="474" class="cl">Handshake de 3 vias</text>
+  <text x="62" y="508" class="cf">servidor_tcp.py</text>
+  <text x="62" y="526" class="cf">cliente_tcp.py</text>
+
+  <rect x="386" y="326" width="280" height="212" rx="12" fill="#ffffff" stroke="#ffedd5" stroke-width="1.5"/>
+  <circle cx="416" cy="358" r="16" fill="#ea580c"/>
+  <text x="416" y="363" class="num" text-anchor="middle">2</text>
+  <text x="444" y="364" class="ct">UDP</text>
+  <text x="408" y="402" class="cl">Sem conexao nenhuma</text>
+  <text x="408" y="426" class="cl">SOCK_DGRAM</text>
+  <text x="408" y="450" class="cl">sendto / recvfrom</text>
+  <text x="408" y="474" class="cl">Rapido, sem garantia</text>
+  <text x="408" y="508" class="cf">servidor_udp.py</text>
+
+  <rect x="732" y="326" width="280" height="212" rx="12" fill="#ffffff" stroke="#dcfce7" stroke-width="1.5"/>
+  <circle cx="762" cy="358" r="16" fill="#059669"/>
+  <text x="762" y="363" class="num" text-anchor="middle">3</text>
+  <text x="790" y="364" class="ct">HTTP</text>
+  <text x="754" y="402" class="cl">Servidor web na mao</text>
+  <text x="754" y="426" class="cl">Le a requisicao</text>
+  <text x="754" y="450" class="cl">Monta cabecalho e corpo</text>
+  <text x="754" y="474" class="cl">Separa com CRLF CRLF</text>
+  <text x="754" y="508" class="cf">servidor_http.py</text>
+  <text x="754" y="526" class="cf">cliente_http.py</text>
+
+  <rect x="1078" y="326" width="280" height="212" rx="12" fill="#ffffff" stroke="#ede9fe" stroke-width="1.5"/>
+  <circle cx="1108" cy="358" r="16" fill="#7c3aed"/>
+  <text x="1108" y="363" class="num" text-anchor="middle">4</text>
+  <text x="1136" y="364" class="ct">DHCP</text>
+  <text x="1100" y="402" class="cl">Distribui endereco IP</text>
+  <text x="1100" y="426" class="cl">Ciclo D O R A</text>
+  <text x="1100" y="450" class="cl">Pacotes com struct</text>
+  <text x="1100" y="474" class="cl">Pool de enderecos</text>
+  <text x="1100" y="508" class="cf">dhcp_servidor.py</text>
+  <text x="1100" y="526" class="cf">cliente_dhcp.py</text>
+
+  <rect x="40" y="562" width="1320" height="56" rx="10" fill="#eef2ff" stroke="#c7d2fe" stroke-width="1.5"/>
+  <text x="700" y="596" class="foot" text-anchor="middle">Toda a comunicacao usa a biblioteca padrao socket, nenhum pip install necessario</text>
+</svg>

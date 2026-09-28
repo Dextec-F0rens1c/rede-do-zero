@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560" role="img" aria-label="Estrutura de uma requisicao e resposta HTTP">
+  <style>
+    text{font-family:'Segoe UI',Helvetica,Arial,sans-serif}
+    .h1{font-size:24px;font-weight:700;fill:#0f172a}
+    .sub{font-size:14px;fill:#64748b}
+    .pl{font-size:15px;font-weight:700}
+    .co{font-family:Consolas,'Courier New',monospace;font-size:12px;fill:#0f172a}
+    .cn{font-family:Consolas,'Courier New',monospace;font-size:12px;fill:#15803d}
+    .cs{font-family:Consolas,'Courier New',monospace;font-size:12px;fill:#b91c1c}
+    .sep{font-family:Consolas,'Courier New',monospace;font-size:11px;fill:#b45309}
+    .foot{font-size:13px;fill:#3730a3}
+  </style>
+  <defs>
+    <marker id="d" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="560" fill="#f8fafc"/>
+
+  <text x="500" y="40" class="h1" text-anchor="middle">Uma conversa HTTP por dentro</text>
+  <text x="500" y="66" class="sub" text-anchor="middle">E so texto puro. E exatamente isso que o seu navegador envia.</text>
+
+  <rect x="40" y="92" width="920" height="160" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="60" y="118" class="pl" fill="#1e40af">REQUISICAO  (o que o cliente envia)</text>
+  <text x="60" y="146" class="cs">GET</text>
+  <text x="88" y="146" class="co">/index.html </text>
+  <text x="188" y="146" class="cn">HTTP/1.1</text>
+  <text x="60" y="166" class="cn">Host:</text>
+  <text x="102" y="166" class="co">127.0.0.1:8080</text>
+  <text x="60" y="186" class="cn">User-Agent:</text>
+  <text x="142" y="186" class="co">cliente-bruto/1.0</text>
+  <text x="60" y="206" class="cn">Connection:</text>
+  <text x="144" y="206" class="co">close</text>
+  <text x="300" y="226" class="sep">\r\n  quebra de linha</text>
+  <text x="60" y="242" class="sep">\r\n\r\n  separador: daqui para baixo comeca o corpo (vazio no GET)</text>
+
+  <text x="500" y="278" class="foot" text-anchor="middle">o servidor le a primeira linha, pega o caminho e procura o arquivo</text>
+  <line x1="500" y1="288" x2="500" y2="312" stroke="#64748b" stroke-width="2" marker-end="url(#d)"/>
+
+  <rect x="40" y="320" width="920" height="176" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="60" y="346" class="pl" fill="#15803d">RESPOSTA  (o que o servidor devolve)</text>
+  <text x="60" y="374" class="cn">HTTP/1.1 </text>
+  <text x="136" y="374" class="cs">200 OK</text>
+  <text x="60" y="394" class="cn">Content-Type:</text>
+  <text x="142" y="394" class="co">text/html; charset=utf-8</text>
+  <text x="60" y="414" class="cn">Content-Length:</text>
+  <text x="166" y="414" class="co">156</text>
+  <text x="300" y="434" class="sep">\r\n\r\n  separador cabecalho / corpo</text>
+  <text x="60" y="458" class="co">&lt;!DOCTYPE html&gt;</text>
+  <text x="60" y="478" class="co">&lt;html&gt;</text>
+  <text x="60" y="498" class="co">  &lt;h1&gt;Servidor HTTP feito na mao&lt;/h1&gt;</text>
+
+  <rect x="620" y="320" width="340" height="176" rx="10" fill="#fef2f2" stroke="#fecaca" stroke-width="1.5"/>
+  <text x="640" y="346" class="pl" fill="#b91c1c">E se o arquivo nao existir?</text>
+  <text x="640" y="374" class="cs">HTTP/1.1 404 Not Found</text>
+  <text x="640" y="398" class="cn">Content-Type:</text>
+  <text x="722" y="398" class="co">text/plain</text>
+  <text x="640" y="424" class="co">404 - Nao encontrado</text>
+  <text x="640" y="452" class="sep">mesmo formato, outro status</text>
+  <text x="640" y="476" class="sep">por isso seu codigo tem um if</text>
+
+  <text x="500" y="534" class="foot" text-anchor="middle">Rode servidor_http.py, depois abra http://127.0.0.1:8080 no navegador: e a mesma coisa que o cliente_http.py faz.</text>
+</svg>

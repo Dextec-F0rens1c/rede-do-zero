@@ -1,0 +1,10 @@
+# Rede do Zero - dependencias
+#
+# Este projeto usa APENAS a biblioteca padrao do Python.
+# Nenhum pacote externo e necessario.
+#
+# Biblioteca principal: socket (ja vem com o Python)
+#
+# Para instalar as ferramentas opcionais de rede:
+#   pip install scapy
+#

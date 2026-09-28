@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 340" width="1400" height="340" role="img" aria-label="Ciclo de vida de um servidor TCP">
+  <style>
+    text{font-family:'Segoe UI',Helvetica,Arial,sans-serif}
+    .h1{font-size:24px;font-weight:700;fill:#0f172a}
+    .sub{font-size:14px;fill:#64748b}
+    .fn{font-size:15px;font-weight:700;fill:#1d4ed8}
+    .de{font-size:12px;fill:#475569}
+    .n{font-size:12px;font-weight:700;fill:#ffffff}
+    .foot{font-size:13px;fill:#b91c1c}
+  </style>
+  <defs>
+    <marker id="c" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="340" fill="#f8fafc"/>
+
+  <text x="700" y="42" class="h1" text-anchor="middle">O ciclo de vida de um servidor TCP</text>
+  <text x="700" y="68" class="sub" text-anchor="middle">Cada funcao do socket tem um papel especifico, e a ordem importa</text>
+
+  <rect x="40" y="100" width="200" height="150" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="64" cy="124" r="13" fill="#2563eb"/>
+  <text x="64" y="128" class="n" text-anchor="middle">1</text>
+  <text x="140" y="180" class="fn" text-anchor="middle">socket()</text>
+  <text x="140" y="204" class="de" text-anchor="middle">Cria o socket</text>
+  <text x="140" y="224" class="de" text-anchor="middle">AF_INET + SOCK_STREAM</text>
+
+  <rect x="264" y="100" width="200" height="150" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="288" cy="124" r="13" fill="#2563eb"/>
+  <text x="288" y="128" class="n" text-anchor="middle">2</text>
+  <text x="364" y="180" class="fn" text-anchor="middle">bind()</text>
+  <text x="364" y="204" class="de" text-anchor="middle">Reserva a porta</text>
+  <text x="364" y="224" class="de" text-anchor="middle">0.0.0.0:5000</text>
+
+  <rect x="488" y="100" width="200" height="150" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="512" cy="124" r="13" fill="#2563eb"/>
+  <text x="512" y="128" class="n" text-anchor="middle">3</text>
+  <text x="588" y="180" class="fn" text-anchor="middle">listen()</text>
+  <text x="588" y="204" class="de" text-anchor="middle">Entra em escuta</text>
+  <text x="588" y="224" class="de" text-anchor="middle">cria a fila de espera</text>
+
+  <rect x="712" y="100" width="200" height="150" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="736" cy="124" r="13" fill="#ea580c"/>
+  <text x="736" y="128" class="n" text-anchor="middle">4</text>
+  <text x="812" y="180" class="fn" text-anchor="middle">accept()</text>
+  <text x="812" y="204" class="de" text-anchor="middle">BLOQUEIA ate chegar</text>
+  <text x="812" y="224" class="de" text-anchor="middle">devolve conn, addr</text>
+
+  <rect x="936" y="100" width="200" height="150" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="960" cy="124" r="13" fill="#ea580c"/>
+  <text x="960" y="128" class="n" text-anchor="middle">5</text>
+  <text x="1036" y="180" class="fn" text-anchor="middle">thread</text>
+  <text x="1036" y="204" class="de" text-anchor="middle">Atende cada cliente</text>
+  <text x="1036" y="224" class="de" text-anchor="middle">recv + transmitir</text>
+
+  <rect x="1160" y="100" width="200" height="150" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="1184" cy="124" r="13" fill="#64748b"/>
+  <text x="1184" y="128" class="n" text-anchor="middle">6</text>
+  <text x="1260" y="180" class="fn" text-anchor="middle">close()</text>
+  <text x="1260" y="204" class="de" text-anchor="middle">Encerra a conexao</text>
+  <text x="1260" y="224" class="de" text-anchor="middle">libera a porta</text>
+
+  <line x1="246" y1="175" x2="258" y2="175" stroke="#94a3b8" stroke-width="2" marker-end="url(#c)"/>
+  <line x1="470" y1="175" x2="482" y2="175" stroke="#94a3b8" stroke-width="2" marker-end="url(#c)"/>
+  <line x1="694" y1="175" x2="706" y2="175" stroke="#94a3b8" stroke-width="2" marker-end="url(#c)"/>
+  <line x1="918" y1="175" x2="930" y2="175" stroke="#94a3b8" stroke-width="2" marker-end="url(#c)"/>
+  <line x1="1142" y1="175" x2="1154" y2="175" stroke="#94a3b8" stroke-width="2" marker-end="url(#c)"/>
+
+  <rect x="40" y="272" width="1320" height="46" rx="10" fill="#fef2f2" stroke="#fecaca" stroke-width="1.5"/>
+  <text x="700" y="300" class="foot" text-anchor="middle">O accept() trava o programa enquanto espera. Sem thread, o servidor so atenderia um cliente por vez.</text>
+</svg>

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560" role="img" aria-label="O ciclo DORA do protocolo DHCP">
+  <style>
+    text{font-family:'Segoe UI',Helvetica,Arial,sans-serif}
+    .h1{font-size:24px;font-weight:700;fill:#0f172a}
+    .sub{font-size:14px;fill:#64748b}
+    .who{font-size:16px;font-weight:700}
+    .st{font-size:14px;font-weight:700;fill:#6d28d9}
+    .de{font-size:12px;fill:#64748b}
+    .life{stroke:#cbd5e1;stroke-width:2;stroke-dasharray:6 6}
+    .flow{stroke:#7c3aed;stroke-width:2.5}
+    .pt{font-size:13px;font-weight:700;fill:#7c2d12}
+    .pi{font-size:11px;fill:#64748b}
+    .foot{font-size:12px;fill:#475569}
+  </style>
+  <defs>
+    <marker id="e" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#7c3aed"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="560" fill="#f8fafc"/>
+
+  <text x="500" y="40" class="h1" text-anchor="middle">DHCP: o ciclo DORA</text>
+  <text x="500" y="66" class="sub" text-anchor="middle">Como um dispositivo recem-ligado consegue um endereco IP para entrar na rede</text>
+
+  <rect x="60" y="92" width="240" height="46" rx="10" fill="#ede9fe" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="180" y="121" class="who" fill="#4c1d95" text-anchor="middle">Cliente</text>
+
+  <rect x="500" y="92" width="240" height="46" rx="10" fill="#fae8ff" stroke="#f0abfc" stroke-width="1.5"/>
+  <text x="620" y="121" class="who" fill="#701a75" text-anchor="middle">Servidor DHCP</text>
+
+  <line x1="180" y1="145" x2="180" y2="490" class="life"/>
+  <line x1="620" y1="145" x2="620" y2="490" class="life"/>
+
+  <line x1="190" y1="190" x2="610" y2="190" class="flow" marker-end="url(#e)"/>
+  <text x="400" y="180" class="st" text-anchor="middle">1. DISCOVER</text>
+  <text x="400" y="210" class="de" text-anchor="middle">"alguem aqui distributes endereco IP?"</text>
+
+  <line x1="610" y1="275" x2="190" y2="275" class="flow" marker-end="url(#e)"/>
+  <text x="400" y="265" class="st" text-anchor="middle">2. OFFER</text>
+  <text x="400" y="295" class="de" text-anchor="middle">"tenho o 192.168.10.10 disponivel"</text>
+
+  <line x1="190" y1="360" x2="610" y2="360" class="flow" marker-end="url(#e)"/>
+  <text x="400" y="350" class="st" text-anchor="middle">3. REQUEST</text>
+  <text x="400" y="380" class="de" text-anchor="middle">"quero esse, por favor"</text>
+
+  <line x1="610" y1="445" x2="190" y2="445" class="flow" marker-end="url(#e)"/>
+  <text x="400" y="435" class="st" text-anchor="middle">4. ACK</text>
+  <text x="400" y="465" class="de" text-anchor="middle">"confirmado, o IP e seu. Pode entrar na rede."</text>
+
+  <rect x="770" y="150" width="200" height="230" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="870" y="178" class="pt" text-anchor="middle">POOL DE IPS</text>
+  <text x="790" y="208" class="pi">192.168.10.10  livre</text>
+  <text x="790" y="232" class="pi">192.168.10.11  livre</text>
+  <text x="790" y="256" class="pi">192.168.10.12  livre</text>
+  <line x1="790" y1="276" x2="950" y2="276" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="790" y="300" class="pi">10 slots no total</text>
+  <text x="790" y="324" class="pi">cada MAC recebe 1</text>
+  <text x="790" y="348" class="pi">ATRIBUIDOS = {}</text>
+  <text x="790" y="366" class="pi">guarda quem ja tem</text>
+
+  <text x="500" y="530" class="foot" text-anchor="middle">Cada passo e um pacote com layout fixo. Por isso o cliente le o MAC da posicao 12 e o IP da posicao 22.</text>
+</svg>

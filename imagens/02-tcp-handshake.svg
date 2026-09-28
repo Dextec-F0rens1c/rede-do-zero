@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520" role="img" aria-label="Handshake do protocolo TCP em tres vias">
+  <style>
+    text{font-family:'Segoe UI',Helvetica,Arial,sans-serif}
+    .h1{font-size:24px;font-weight:700;fill:#0f172a}
+    .sub{font-size:14px;fill:#64748b}
+    .who{font-size:17px;font-weight:700}
+    .flag{font-size:15px;font-weight:700;fill:#1d4ed8}
+    .det{font-size:12px;fill:#64748b}
+    .life{stroke:#cbd5e1;stroke-width:2;stroke-dasharray:6 6}
+    .flow{stroke:#2563eb;stroke-width:2.5}
+    .foot{font-size:12px;fill:#64748b}
+  </style>
+  <defs>
+    <marker id="b" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect width="900" height="520" fill="#f8fafc"/>
+
+  <text x="450" y="44" class="h1" text-anchor="middle">O handshake do TCP</text>
+  <text x="450" y="70" class="sub" text-anchor="middle">Antes de qualquer dado, as duas maquinas negociam a conexao</text>
+
+  <rect x="70" y="96" width="240" height="48" rx="10" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="190" y="126" class="who" fill="#1e3a8a" text-anchor="middle">Cliente</text>
+
+  <rect x="590" y="96" width="240" height="48" rx="10" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
+  <text x="710" y="126" class="who" fill="#14532d" text-anchor="middle">Servidor</text>
+
+  <line x1="190" y1="150" x2="190" y2="465" class="life"/>
+  <line x1="710" y1="150" x2="710" y2="465" class="life"/>
+
+  <line x1="200" y1="180" x2="700" y2="180" class="flow" marker-end="url(#b)"/>
+  <text x="450" y="170" class="flag" text-anchor="middle">SYN</text>
+  <text x="450" y="200" class="det" text-anchor="middle">"Oi, existe voce ai?"</text>
+
+  <line x1="700" y1="270" x2="200" y2="270" class="flow" marker-end="url(#b)"/>
+  <text x="450" y="260" class="flag" text-anchor="middle">SYN-ACK</text>
+  <text x="450" y="290" class="det" text-anchor="middle">"Sim, e eu tambem quero falar com voce"</text>
+
+  <line x1="200" y1="360" x2="700" y2="360" class="flow" marker-end="url(#b)"/>
+  <text x="450" y="350" class="flag" text-anchor="middle">ACK</text>
+  <text x="450" y="380" class="det" text-anchor="middle">"Fechado, agora os dados podem circular"</text>
+
+  <line x1="200" y1="440" x2="700" y2="440" class="flow" marker-end="url(#b)"/>
+  <text x="450" y="430" class="flag" text-anchor="middle">Dados</text>
+  <text x="450" y="460" class="det" text-anchor="middle">"oi tudo bem?"  /  "tudo certo por aqui"</text>
+
+  <text x="450" y="500" class="foot" text-anchor="middle">SYN = synchronize   ACK = acknowledge   seq = numero de sequencia</text>
+</svg>

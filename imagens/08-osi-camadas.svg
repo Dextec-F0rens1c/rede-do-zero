@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600" role="img" aria-label="Camadas do modelo OSI e onde cada etapa do projeto se encaixa">
+  <style>
+    text{font-family:'Segoe UI',Helvetica,Arial,sans-serif}
+    .h1{font-size:24px;font-weight:700;fill:#0f172a}
+    .sub{font-size:14px;fill:#64748b}
+    .n{font-size:15px;font-weight:700;fill:#0f172a}
+    .d{font-size:11px;fill:#64748b}
+    .bk{font-size:12px;font-weight:700;letter-spacing:1px}
+    .fl{font-family:Consolas,monospace;font-size:11px;fill:#1d4ed8}
+    .fl2{font-family:Consolas,monospace;font-size:11px;fill:#b45309}
+    .foot{font-size:12px;fill:#475569}
+  </style>
+  <rect width="900" height="600" fill="#f8fafc"/>
+
+  <text x="450" y="40" class="h1" text-anchor="middle">Onde cada etapa vive no modelo OSI</text>
+  <text x="450" y="66" class="sub" text-anchor="middle">Cada camada so conversa com a de cima e a de baixo. Isso se chama encapsulamento.</text>
+
+  <rect x="30" y="100" width="540" height="52" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+  <text x="50" y="124" class="n">7</text>
+  <text x="70" y="124" class="n">Aplicacao</text>
+  <text x="70" y="142" class="d">HTTP, DHCP, DNS, e-mail  -  o que o usuario ve</text>
+  <rect x="640" y="100" width="230" height="52" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <text x="660" y="122" class="fl">servidor_http.py</text>
+  <text x="660" y="140" class="fl">dhcp_servidor.py</text>
+
+  <rect x="50" y="164" width="520" height="52" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="70" y="188" class="n" fill="#64748b">6</text>
+  <text x="90" y="188" class="n" fill="#64748b">Apresentacao</text>
+  <text x="90" y="206" class="d">criptografia, compressao, formatacao  -  nao usada aqui</text>
+
+  <rect x="70" y="228" width="500" height="52" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="90" y="252" class="n" fill="#64748b">5</text>
+  <text x="110" y="252" class="n" fill="#64748b">Sessao</text>
+  <text x="110" y="270" class="d">mantem a conversa aberta  -  nao usada aqui</text>
+
+  <rect x="90" y="292" width="480" height="52" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="110" y="316" class="n">4</text>
+  <text x="130" y="316" class="n">Transporte</text>
+  <text x="130" y="334" class="d">TCP e UDP  -  as Etapas 1 e 2 moram aqui</text>
+  <rect x="640" y="292" width="230" height="52" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="660" y="314" class="fl">servidor_tcp.py</text>
+  <text x="660" y="332" class="fl">servidor_udp.py</text>
+
+  <rect x="110" y="356" width="460" height="52" rx="8" fill="#ede9fe" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="130" y="380" class="n">3</text>
+  <text x="150" y="380" class="n">Rede</text>
+  <text x="150" y="398" class="d">endereco IP e roteamento entre maquinas</text>
+  <rect x="640" y="356" width="230" height="52" rx="8" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="660" y="378" class="fl">ipaddress</text>
+  <text x="660" y="396" class="fl">struct</text>
+
+  <rect x="130" y="420" width="440" height="52" rx="8" fill="#ffedd5" stroke="#f97316" stroke-width="2"/>
+  <text x="150" y="444" class="n">2</text>
+  <text x="170" y="444" class="n">Vinculo de dados</text>
+  <text x="170" y="462" class="d">MAC address e quadro local</text>
+  <rect x="640" y="420" width="230" height="52" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+  <text x="660" y="442" class="fl2">socket.AF_INET</text>
+  <text x="660" y="460" class="d">dados[12:18] = MAC</text>
+
+  <rect x="150" y="484" width="420" height="52" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="170" y="508" class="n" fill="#64748b">1</text>
+  <text x="190" y="508" class="n" fill="#64748b">Fisica</text>
+  <text x="190" y="526" class="d">sua placa de rede, cabo, wi-fi, luz</text>
+
+  <text x="450" y="572" class="foot" text-anchor="middle">Cada camada embrulha a de cima: o HTTP vira bytes, os bytes viram pacote, o pacote vira luz no cabo.</text>
+</svg>
